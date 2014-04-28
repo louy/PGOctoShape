@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="com.l0uy.phonegap.PGOctoShape"
+      version="0.2.0">
+    <name>PGOctoShape</name>
+
+    <js-module src="www/PGOctoShape.js" name="com.l0uy.phonegap.PGOctoShape">
+        <clobbers target="PGOctoShape" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PGOctoShape"> 
+                <param name="android-package" value="com.l0uy.phonegap.PGOctoShape"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/PGOctoShape.java" target-dir="src/com/l0uy/phonegap" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+          <feature name="PGOctoShape">
+            <param name="ios-package" value="PGOctoShape"/>
+          </feature>
+        </config-file>
+
+        <framework src="MediaPlayer.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="Security.framework" />
+        <framework src="libm.dylib" />
+        <framework src="libpthread.dylib" />
+        <framework src="libz.dylib" />
+
+        <source-file src="src/ios/PGOctoShape.m" />
+        <source-file src="src/ios/liboctoiphone.a" framework="true" />
+
+        <header-file src="src/ios/PGOctoShape.h" />
+        <header-file src="src/ios/include/OCAPI.h" />
+        <header-file src="src/ios/include/OCAuthentication.h" />
+        <header-file src="src/ios/include/OCAuthenticationEvent.h" />
+        <header-file src="src/ios/include/OCCurrentStreamInfoEvent.h" />
+        <header-file src="src/ios/include/OCDurationChangedEvent.h" />
+        <header-file src="src/ios/include/OCEvent.h" />
+        <header-file src="src/ios/include/OCEventTypes.h" />
+        <header-file src="src/ios/include/OCMultiStreamInfoEvent.h" />
+        <header-file src="src/ios/include/OCOctoshapeSystem.h" />
+        <header-file src="src/ios/include/OCOctoshapeSystemStartedEvent.h" />
+        <header-file src="src/ios/include/OCOctoStatic.h" />
+        <header-file src="src/ios/include/OCPortBoundEvent.h" />
+        <header-file src="src/ios/include/OCProblemEvent.h" />
+        <header-file src="src/ios/include/OCSeekTypeInfoEvent.h" />
+        <header-file src="src/ios/include/OCStatusUpdateEvent.h" />
+        <header-file src="src/ios/include/OCStreamConfigEvent.h" />
+        <header-file src="src/ios/include/OCStreamPlayer.h" />
+        <header-file src="src/ios/include/OCStreamSourceInfoEvent.h" />
+        <header-file src="src/ios/include/OCTimeInfoEvent.h" />
+        <header-file src="src/ios/include/OCTimeInfoLiveEvent.h" />
+        <header-file src="src/ios/include/OCTimeInfoOnDemandEvent.h" />
+        <header-file src="src/ios/include/OCUMetaEvent.h" />
+        <header-file src="src/ios/include/OCUrlEvent.h" />
+    </platform>
+</plugin>
